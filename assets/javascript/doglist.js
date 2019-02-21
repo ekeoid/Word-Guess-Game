@@ -1,6 +1,6 @@
 // dog breeds and images were taken from www.akc.org for use on this site.
 
-var dogList = `[  
+var dogList = `[
     {"breed": "Affenpinscher",
      "image": "affenpinscher.jpg"},
     {"breed": "Afghan Hound",
@@ -51,11 +51,11 @@ var dogList = `[
      "image": ".jpg"},
     {"breed": "Bavarian Mountain Scent Hound",
      "image": ".jpg"},
-    {"breed": "",
+    {"breed": "2",
      "image": ".jpg"},
-    {"breed": "",
+    {"breed": "3",
      "image": ".jpg"},
-                
+
 {}
 ]`;
 
