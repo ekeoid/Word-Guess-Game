@@ -133,7 +133,6 @@ var indexes = getAllIndexes(Cars, "Nano");
 
 
 
-targetDiv.textContent = guessString;
 
 var lettersGuessed;
 var guessedWordSoFar;
