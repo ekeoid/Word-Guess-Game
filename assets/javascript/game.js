@@ -13,7 +13,9 @@ var spanWins = document.getElementById("wins");
 var spanWord = document.getElementById("word");
 var spanGuesses = document.getElementById("guesses");
 var spanLetters = document.getElementById("letters");
-var spanKey = document.getElementById("key");
+var spanWarning = document.getElementById("warning");
+var spanImage = document.getElementById("img");
+
 
 var game = {
     wins: 0,
@@ -38,7 +40,8 @@ var game = {
         spanWord.innerHTML = formatWord(this.wordGuessed);
         spanGuesses.textContent = (this.numGuesses - this.lettersWrong.length);
         spanLetters.innerHTML = formatWord(this.lettersWrong);
-        
+        spanImage.innerHTML = '<img class="image" src="assets/images/' + this.wordURL + '"/>';
+
     },
 
     getWord: function () {
@@ -81,8 +84,6 @@ var game = {
         }
 
         if (this.gameOver) {
-            this.init();
-            this.displayGame();
             this.playGame();
         }
 
@@ -111,13 +112,12 @@ var game = {
                     this.lettersWrong.push(guessedLetter);
                 }
             }
-            spanKey.textContent = "";
-            return guessedLetter;
+            spanWarning.textContent = "";
+            //return guessedLetter;
 
         } else {
-            console.log("Wrong Key");
-            spanKey.textContent = "Please enter a letter!";
-            
+            //console.log("Wrong Key");
+            spanWarning.textContent = "Please enter a letter!";
         }
     },
 
@@ -141,12 +141,10 @@ var game = {
 
         document.onkeyup = function (event) {
             // inside the document object
-            var guessedLetter = game.getGuess(event.key);
-
+            game.getGuess(event.key);
             game.updateGuess();
             game.displayGame();
             game.checkGame();
-
         }
     }
 };

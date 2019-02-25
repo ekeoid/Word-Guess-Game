@@ -1,0 +1,112 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-repeat: repeat;
+    background-color: #cccccc;
+  }
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 1em;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: darkslategrey;
+}
+
+.head {
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    /* width: 200px; */
+}
+
+h2 {
+    font-size: 5.5em;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.title {
+    display: block;
+    transform: rotate(-2.5deg);
+    width: auto;
+    margin-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    background-color: rgba(150, 160, 160, 0.3);
+
+    /* height: 300px; */
+}
+
+.instructions {
+    /* display: block; */
+
+    /* margin-left: 200px; */
+    float: right;
+    background-color: rgba(250, 250, 250, 0.7);
+    padding: 7px;
+    margin-top: -30px;
+}
+.fancy {
+    
+    /* text-decoration-line: overline underline; */
+    /* text-decoration-style: wavy; */
+}
+
+.pic {
+    display: inline-block;
+    width: 250px;
+    margin-top: 50px;
+}
+
+.image {
+    width: 250px;
+    height: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.main {
+    display: inline-block;
+    position: relative;
+    left: 350px;
+    top: -620px;
+    background-color: rgba(56, 34, 5, 0.6);
+    padding: 8px;
+    line-height: 20px;
+    width: 400px;
+
+    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
+}
+
+div {
+    font-family: 'Roboto', sans-serif; 
+}
+
+.guessedwords {
+    display: inline-block;
+    font-size: 3em;
+    line-height: 60px;
+    letter-spacing: 3px;
+    font-family: 'Coiny', cursive;
+    width: 600px;
+    height: 500px;
+    text-align: center;
+    margin-top: 100px;
+    background-color: rgba(250, 250, 250, 0.7);
+    padding: 6px;
+
+}
+
+.warn {
+    text-align: center;
+    color: red;
+}
+.test {
+    border: 2px dotted red;
+}
