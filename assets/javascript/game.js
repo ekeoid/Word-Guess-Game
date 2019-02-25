@@ -76,7 +76,7 @@ var game = {
     checkGame: function () {
         if (this.wordGuessed == this.wordSecret) {
             this.wins++;
-            setTimeout(function () { this.gameOver = true; }, 3000);
+            this.gameOver = true;
         }
 
         if (this.lettersWrong.length >= this.numGuesses) {
