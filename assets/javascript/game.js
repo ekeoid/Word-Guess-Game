@@ -1,98 +1,154 @@
 //JavaScript for Word Game on Dog Breeds
 
- var car = {
-            make: "Honda",
-            model: "Fit",
-            color: "Blue Raspberry",
-            mileage: 3000,
-            isWorking: true,
-
-            driveToWork: function () {
-
-                //alert("Old Mileage: " + this.mileage);
-
-                this.mileage = this.mileage + 8;
-
-                //alert("New mileage: " + this.mileage);
-            },
-
-            driveAroundWorld: function () {
-
-                //alert("Old Mileage: " + this.mileage);
-
-                this.mileage = this.mileage + 24000;
-
-                //alert("New Mileage: " + this.mileage);
-                //alert("Car needs a tuneup!");
-
-                this.isWorking = false;
-            },
-
-            getTuneUp: function () {
-                //alert("Car is ready to go!");
-                this.isWorking = true;
-            },
-
-            honk: function () {
-                //alert("Honk! Honk!");
-            }
-        };
 
 
-        document.onkeyup = function (event) {
-            var selection = event.key;
+function isLetter(letter) {
+    /*  Returns 'true' or 'false'
+     *  Checks input is 1 character and regular expression matching
+     *  character a through z inclusive and case-insensitive.
+     */
+    return letter.length === 1 && letter.match(/[a-z]/i);
+}
 
-            var textCarMake   = document.getElementById("carMake");
-            var textCarModel  = document.getElementById("carModel");
-            var textCarColor  = document.getElementById("carColor");
-            var textCarMilage = document.getElementById("carMilage");
-            var textCarStatus = document.getElementById("carStatus");
-
-            if (selection == 'a') {
-                var update = prompt("Enter new car make");
-                car.make = update;
-            }
-
-            if (selection == 'b') {
-                var update = prompt("Enter new car model");
-                car.model = update;
-            }
-
-            if (selection == 'c') {
-                var update = prompt("Enter new car color");
-                car.color = update;
-            }
-
-            if (selection == 'd') {
-                car.driveToWork();
-            }
-
-            if (selection == 'e') {
-                car.driveAroundWorld();
-            }
-
-            if (selection == 'f') {
-                car.getTuneUp();
-            }
-
-            if (selection == 'g') {
-                car.honk();
-            }
-
-            textCarMake.textContent   = "The Car's Make:   " + car.make;
-            textCarModel.textContent  = "The Car's Model:  " + car.model;
-            textCarColor.textContent  = "The Car's Color:  " + car.color;
-            textCarMilage.textContent = "The Car's Milage: " + car.mileage;
-            textCarStatus.textContent = "The Car's Status: " + car.isWorking;
-
+function getGuess(alreadyGuessed) {
+    /*  Returns a letter or blank ("") 
+     *  Checks if input is a letter and letter is not already
+     *  guessed (wrong) and not already guessed (right).
+     */
 
 }
 
+String.prototype.replaceAt = function (index, replacement) {
+    /*  Additional method for String class
+     *  Concatenates existing string in-between replacement character
+     *  at index location.
+     */
+    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+}
+
+function formatWord(string) {
+    var newString = "";
+    for (var i = 0; i < string.length; i++) {
+        newString += string[i] + "&nbsp;";
+    }
+    return newString;
+}
+
+function updateGuess(lettersRight, lettersWrong, wordSecret) {
+
+    var spanWins = document.getElementById("wins");
+    var spanWord = document.getElementById("word");
+    var spanGuesses = document.getElementById("guesses");
+    var spanLetters = document.getElementById("letters");
+    var spanKey = document.getElementById("key");
+
+
+    document.onkeyup = function (event) {
+        var guessKey = event.key;
+        var wordGuessed = "";
+        var guessedLetter = "";
+
+
+        console.log("Main: " + guessKey);
+
+        if (isLetter(guessKey)) {
+            guessedLetter = guessKey.toLowerCase();
+
+            if (wordSecret.toLowerCase().indexOf(guessedLetter) != -1) {
+                console.log("index match: " + guessedLetter);
+                console.log(wordSecret);
+                if (lettersRight.indexOf(guessedLetter) == -1) {
+                    lettersRight.push(guessedLetter);
+                }
+            } else {
+                if (lettersWrong.indexOf(guessedLetter) == -1) {
+                    lettersWrong.push(guessedLetter);
+                }
+            }
+
+        } else {
+            //Please Enter a letter
+        }
+
+
+
+
+        for (var i = 0; i < wordSecret.length; i++) {
+            // Create array mirror of wordSecret of blanks
+            wordGuessed += (wordSecret[i] != " ") ? "_" : " ";
+        }
+
+        for (var iR = 0; iR < lettersRight.length; iR++) {
+            // Recheck all guessed (right) letters and update wordGuessed (blanks)
+            console.log("iR: " + lettersRight[iR]);
+            for (var iW = 0; iW < wordSecret.length; iW++) {
+                // Compare guessed (right) against wordSecret to match letter index
+                console.log("iw: " + wordSecret[iW]);
+                if (wordSecret[iW].toLowerCase() == lettersRight[iR]) {
+                    wordGuessed = wordGuessed.replaceAt(iW, wordSecret[iW]);
+                }
+            }
+        }
+
+        //Check Win 
+        if (wordGuessed == wordSecret) {
+            wins++;
+            wordSecret = "Hello Again";
+            lettersRight = [];
+            lettersWrong = [];
+        }
+
+
+        console.log("Letters Right: " + lettersRight);
+        console.log("Letters Wrong: " + lettersWrong);
+        console.log(wordGuessed);
+
+        spanWins.textContent = wins;
+        spanWord.innerHTML = formatWord(wordGuessed);
+        spanGuesses.textContent = (15 - lettersWrong.length);
+        spanLetters.textContent = lettersWrong;
+        spanKey.textContent = guessedLetter;
+
+    }
+
+}
+
+
+var lettersRight = new Array(0);
+var lettersWrong = new Array(0);
+var wordSecret = "Hello World";
+var wins = 0;
+//var wordGuessed = "";
+
+updateGuess(lettersRight, lettersWrong, wordSecret);
+
+
+var game = {
+    wins: 0,
+    lettersRight: [],
+    lettersWrong: [],
+    wordSecret = [],
+    gameOver = false,
+
+    init: function () {
+
+    },
+
+    displayGame: function () {
+        spanWins.textContent = wins;
+        spanWord.innerHTML = formatWord(wordGuessed);
+        spanGuesses.textContent = (15 - lettersWrong.length);
+        spanLetters.textContent = lettersWrong;
+        spanKey.textContent = guessedLetter;
+    }
+};
+
+
 // the maximum is exclusive; the minimum is inclusive
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 
@@ -113,23 +169,23 @@ targetDiv.textContent = randomInt;
 
 var dogString = dogs[randomInt].breed.split("");
 var guessString = dogString;
-for (var i=0; i < dogString.length; i++) {
-	if (dogString[i] != " ") {
-		guessString[i] = "_";
-	}
+for (var i = 0; i < dogString.length; i++) {
+    if (dogString[i] != " ") {
+        guessString[i] = "_";
+    }
 }
 
 var targetDiv = document.getElementById("test-array");
 
 function getAllIndexes(arr, val) {
     var indexes = [], i = -1;
-    while ((i = arr.indexOf(val, i+1)) != -1){
+    while ((i = arr.indexOf(val, i + 1)) != -1) {
         indexes.push(i);
     }
     return indexes;
 }
 
-var indexes = getAllIndexes(Cars, "Nano");
+//var indexes = getAllIndexes(Cars, "Nano");
 
 
 
