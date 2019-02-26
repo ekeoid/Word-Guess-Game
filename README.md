@@ -63,9 +63,9 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > This function reads in the external JSON word list, generates a random index based on the size of the word list, and then assigns  `wordSecret = breed` and `wordURL = image`. 
 >
 > ##### `getRandomInt(var1, var2)`
-> This function (taken from [MDN][]) inputs the maximum which is exclusive and the minimum is inclusive. It helps with literacy on the `Math` object. 
+> This function (taken from [MDN1][]) inputs the maximum which is exclusive and the minimum is inclusive. It helps with literacy on the `Math` object. 
 
-[MDN]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+[MDN1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 ##### `checkGame`
 > This function mainly interacts with boolean variable `gameOver`. This variable is set based on the conditions of wining (the word is guessed) and losing (the number of guesses are used up). Once the the boolean condition is changed, this check calls the `playGame()` function again which restarts (not reset) the game again. 
@@ -83,11 +83,11 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > This uses a nested for loop: For the number of correct letters guessed (`lettersRight`), it will iterate through the whole word (`wordSecret`) to make updates of the guessed letters in `wordGuessed`). It iterates through `wordSecret` in order to obtain the index location of the letter and in case there are multiple instances of that letter.
 
 ##### `String.prototype.replaceAt()`
-> Help from [MDN][] and [StackOverflow][]
->
+> This function adds a method to the `string` variables to allow character substitutions. This function helps to literacy of the the `substr()` function.
+> Help from [MDN2][] and [StackOverflow1][]
 
-[StackOverflow]: https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
+[StackOverflow1]: https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
 
-[MDN]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+[MDN2]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 
 
