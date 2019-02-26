@@ -40,25 +40,35 @@ The game was converted to a object format, which basically had me re-write most 
 
 Essentially the game is run by calling the object function `game.playGame()`. 
 
-> ##### `playGame()`
->> This function is essentially the "looping" entity that keeps the game running. After the initial variables and content is set and displayed to the HTML, the `document.onkeyup` keeps the rest of the code looped. 
->>
->>
-> ##### `displayGame()`
->>
->> ###### `formatWord(var1)`
->>
-> ##### `getWord`
+##### `playGame()`
+> This function is essentially the "looping" entity that keeps the game running. After the initial variables and content is set and displayed to the HTML, the `document.onkeyup` keeps the rest of the code looped. 
 
-+ ###### `getRandomInt(var1, var2)`
+##### `init()`
+> This function sets all the variables with initial values. However, not all the variables are set as empty strings or default blank values.
+> These variables are `gameOver`, `wordSecret`, `wordURL`, `lettersRight`, `lettersWrong`, and `wordGuessed`.
+>
+> There are 2 special cases that I can explain here
+> - `getWord()` is a called, which in the function assigns 2 values to `this.object`. This is retrieving the word list from the JSON input and also the image filename to reference later.
+> - `wordGuessed` is a mirror of the `wordSecret` but contains "blanks" which is tracking what the user progress is.
 
-##### `init`
+
+
+
+##### `displayGame()`
+
+##### `formatWord(var1)`
+
+##### `getWord`
+
+##### `getRandomInt(var1, var2)`
+
+
 
 ##### `checkGame`
 
 ##### `getGuess(var1)`
 
-> ###### `isLetter(var1)`
+##### `isLetter(var1)`
 
 ##### `updateGuess`
 
