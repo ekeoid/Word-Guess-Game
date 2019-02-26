@@ -29,5 +29,30 @@ The rest of this README will overview the interpretation of the game.
 
 Creates variable 'dogList' which is assigned a string in the format of a JSON list. This list is contains 2 elements `breed` and `image` for every dog added. The intent of having an external list, is updating the word set for the game independently from the rest of the JavaScript code.
 
+Using this format list allows the use of `JSON.parse(list)` which in the format will create an object of `list.breed` and `list.image` for usability in the game.
+
+Currently only dogs that begin with A, B, and G breeds are in the list :(
+
+
 #### JavaScript - `game.js`
 
+The game was converted to a object format, which basically had me re-write most of the functionality to be able to reference different objects in the variable.
+
+Essentially the game is run by calling the object function `game.playGame()`. 
+
+##### `playGame()`
+is essentially the "looping" entity that keeps the game running. After the initial variables and content is set and displayed to the HTML, the `document.onkeyup` keeps the rest of the code looped. 
+
+This function is  
+
+
+
+displayGame
+getWord
+init
+checkGame
+getGuess
+updateGuess
+playGame
+
+String.prototype.replaceAt 
