@@ -60,9 +60,12 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > This function iterates through a string and adds entity character `&nbsp;` after every character. Using `Array.join()` truncated extra `" "` when displaying to HTML, which investigated to use `&nbsp;`.
 
 ##### `getWord`
->
+> This function reads in the external JSON word list, generates a random index based on the size of the word list, and then assigns  `wordSecret = breed` and `wordURL = image`. 
+
 > ##### `getRandomInt(var1, var2)`
->
+> This function (taken from [MDN][]) inputs the maximum which is exclusive and the minimum is inclusive. It helps with literacy on the `Math` object. 
+
+[MDN]: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random]
 
 ##### `checkGame`
 >
