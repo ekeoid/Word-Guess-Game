@@ -51,27 +51,31 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > - `getWord()` is a called, which in the function assigns 2 values to `this.object`. This is retrieving the word list from the JSON input and also the image filename to reference later.
 > - `wordGuessed` is a mirror of the `wordSecret` but contains "blanks" which is tracking what the user progress is.
 
-
-
-
 ##### `displayGame()`
-
-##### `formatWord(var1)`
+>
+>
+> ##### `formatWord(var1)`
+>
 
 ##### `getWord`
-
-##### `getRandomInt(var1, var2)`
-
-
+>
+> ##### `getRandomInt(var1, var2)`
+>
 
 ##### `checkGame`
+>
 
 ##### `getGuess(var1)`
-
-##### `isLetter(var1)`
+>
+> ##### `isLetter(var1)`
+>
 
 ##### `updateGuess`
+>
 
 ##### `playGame`
+>
 
 ##### `String.prototype.replaceAt`
+>
+>
