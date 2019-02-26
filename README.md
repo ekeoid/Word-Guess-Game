@@ -52,10 +52,12 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > - `wordGuessed` is a mirror of the `wordSecret` but contains "blanks" which is tracking what the user progress is.
 
 ##### `displayGame()`
+> This function write to the DOM with a combination of `element.textContent` and `element.innerHTML`. The `innerHTML` was used to write the `<img>` tag for the picture and the lazy way for handling extra spaces in string.
+> These extra spaces could of been solves with CSS `letter-spacing` however, writing the code was completed before any HTML display.
 >
 >
 > ##### `formatWord(var1)`
->
+> This function iterates through a string and adds entity character `&nbsp;` after every character. Using `Array.join()` truncated extra `" "` when displaying to HTML, which investigated to use `&nbsp;`.
 
 ##### `getWord`
 >
