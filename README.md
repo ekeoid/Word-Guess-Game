@@ -65,7 +65,7 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > ##### `getRandomInt(var1, var2)`
 > This function (taken from [MDN][]) inputs the maximum which is exclusive and the minimum is inclusive. It helps with literacy on the `Math` object. 
 
-[MDN]: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random]
+[MDN]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 ##### `checkGame`
 > This function mainly interacts with boolean variable `gameOver`. This variable is set based on the conditions of wining (the word is guessed) and losing (the number of guesses are used up). Once the the boolean condition is changed, this check calls the `playGame()` function again which restarts (not reset) the game again. 
@@ -86,8 +86,8 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > Help from [MDN][] and [StackOverflow][]
 >
 
-[StackOverflow]: [https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript]
+[StackOverflow]: https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
 
-[MDN]: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace]
+[MDN]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 
 
