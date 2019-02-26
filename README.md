@@ -61,7 +61,7 @@ This function is
 
 ##### `getGuess(var1)`
 
-+ ###### `isLetter(var1)`
+> ###### `isLetter(var1)`
 
 ##### `updateGuess`
 
