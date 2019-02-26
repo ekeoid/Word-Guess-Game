@@ -78,13 +78,16 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > ##### `isLetter(var1)`
 > This function processes the input by regular expression ensuring the input is 1 character length and characters a through z inclusive and case-insensitive.
 
-##### `updateGuess`
+##### `updateGuess()`
 > This function was the most **complex** and **confusing** to think though. Since the guessed letters are in variables `lettersRight`, there is no need to singularly track the guessed letter or the blanks guessed by the user. This function essentially recreates all the guessed letters every time.
 > This uses a nested for loop: For the number of correct letters guessed (`lettersRight`), it will iterate through the whole word (`wordSecret`) to make updates of the guessed letters in `wordGuessed`). It iterates through `wordSecret` in order to obtain the index location of the letter and in case there are multiple instances of that letter.
 
-##### `playGame`
+##### `String.prototype.replaceAt()`
+> Help from [MDN][] and [StackOverflow][]
 >
 
-##### `String.prototype.replaceAt`
->
->
+[StackOverflow]: [https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript]
+
+[MDN]: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace]
+
+
