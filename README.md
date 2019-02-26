@@ -47,12 +47,24 @@ This function is
 
 
 
-displayGame
-getWord
-init
-checkGame
-getGuess
-updateGuess
-playGame
+##### `displayGame()`
 
-String.prototype.replaceAt 
+###### `formatWord(var1)`
+
+##### `getWord`
+
+###### `getRandomInt(var1, var2)`
+
+##### `init`
+
+##### `checkGame`
+
+##### `getGuess(var1)`
+
+###### `isLetter(var1)`
+
+##### `updateGuess`
+
+##### `playGame`
+
+##### `String.prototype.replaceAt`
