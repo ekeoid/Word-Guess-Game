@@ -15,15 +15,18 @@ The rest of this README will overview the interpretation of the game.
 ```
 ├── assets
 |  ├── css
+|  |  └── reset.css
 |  |  └── style.css
 |  ├── images
+|  |  └── [Puppy Pack]
 |  └── javascript
 |     └── game.js
+|     └── doglist.js
 └── index.html
 ```
 
-### JavaScript - Word List
+### JavaScript - `doglist.js`
 
 
-### JavaScript - Game
+### JavaScript - `game.js`
 
