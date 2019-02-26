@@ -40,18 +40,15 @@ The game was converted to a object format, which basically had me re-write most 
 
 Essentially the game is run by calling the object function `game.playGame()`. 
 
-##### `playGame()`
-is essentially the "looping" entity that keeps the game running. After the initial variables and content is set and displayed to the HTML, the `document.onkeyup` keeps the rest of the code looped. 
-
-This function is  
-
-
-
-##### `displayGame()`
-
-+ ###### `formatWord(var1)`
-
-##### `getWord`
+> ##### `playGame()`
+>> This function is essentially the "looping" entity that keeps the game running. After the initial variables and content is set and displayed to the HTML, the `document.onkeyup` keeps the rest of the code looped. 
+>>
+>>
+> ##### `displayGame()`
+>>
+>> ###### `formatWord(var1)`
+>>
+> ##### `getWord`
 
 + ###### `getRandomInt(var1, var2)`
 
