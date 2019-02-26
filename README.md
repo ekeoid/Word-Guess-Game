@@ -61,19 +61,22 @@ Essentially the game is run by calling the object function `game.playGame()`.
 
 ##### `getWord`
 > This function reads in the external JSON word list, generates a random index based on the size of the word list, and then assigns  `wordSecret = breed` and `wordURL = image`. 
-
+>
 > ##### `getRandomInt(var1, var2)`
 > This function (taken from [MDN][]) inputs the maximum which is exclusive and the minimum is inclusive. It helps with literacy on the `Math` object. 
 
 [MDN]: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random]
 
 ##### `checkGame`
->
+> This function mainly interacts with boolean variable `gameOver`. This variable is set based on the conditions of wining (the word is guessed) and losing (the number of guesses are used up). Once the the boolean condition is changed, this check calls the `playGame()` function again which restarts (not reset) the game again. 
+
 
 ##### `getGuess(var1)`
->
+> This function is processes the `event.key` from the `document.onkeyup` event. There is no need to track the guess in any separate variable because all the guesses are added to Array variables `lettersRight` and `lettersWrong`. These arrays track all the inputs to ensure repeated keys are not tracked.
+> The function uses `string.indexOf` to check if input key has been guessed. This occurs as long as the input is a letter `a-z` or `A-Z`.
+
 > ##### `isLetter(var1)`
->
+> This function processes the input by regular expression ensuring the input is 1 character length and characters a through z inclusive and case-insensitive.
 
 ##### `updateGuess`
 >
