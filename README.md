@@ -76,7 +76,7 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > The function uses `string.indexOf` to check if input key has been guessed. This occurs as long as the input is a letter `a-z` or `A-Z`.
 >
 > ##### `isLetter(var1)`
-> This function processes the input by regular expression ensuring the input is 1 character length and characters a through z inclusive and case-insensitive.
+> This function processes the input by regular expression ensuring the input is `1` character length and characters `a` through `z` inclusive and case-insensitive.
 
 ##### `updateGuess()`
 > This function was the most **complex** and **confusing** to think though. Since the guessed letters are in variables `lettersRight`, there is no need to singularly track the guessed letter or the blanks guessed by the user. This function essentially recreates all the guessed letters every time.
