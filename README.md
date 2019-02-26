@@ -74,12 +74,13 @@ Essentially the game is run by calling the object function `game.playGame()`.
 ##### `getGuess(var1)`
 > This function is processes the `event.key` from the `document.onkeyup` event. There is no need to track the guess in any separate variable because all the guesses are added to Array variables `lettersRight` and `lettersWrong`. These arrays track all the inputs to ensure repeated keys are not tracked.
 > The function uses `string.indexOf` to check if input key has been guessed. This occurs as long as the input is a letter `a-z` or `A-Z`.
-
+>
 > ##### `isLetter(var1)`
 > This function processes the input by regular expression ensuring the input is 1 character length and characters a through z inclusive and case-insensitive.
 
 ##### `updateGuess`
->
+> This function was the most **complex** and **confusing** to think though. Since the guessed letters are in variables `lettersRight`, there is no need to singularly track the guessed letter or the blanks guessed by the user. This function essentially recreates all the guessed letters every time.
+> This uses a nested for loop: For the number of correct letters guessed (`lettersRight`), it will iterate through the whole word (`wordSecret`) to make updates of the guessed letters in `wordGuessed`). It iterates through `wordSecret` in order to obtain the index location of the letter and in case there are multiple instances of that letter.
 
 ##### `playGame`
 >
