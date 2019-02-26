@@ -49,11 +49,11 @@ This function is
 
 ##### `displayGame()`
 
-###### `formatWord(var1)`
++ ###### `formatWord(var1)`
 
 ##### `getWord`
 
-###### `getRandomInt(var1, var2)`
++ ###### `getRandomInt(var1, var2)`
 
 ##### `init`
 
@@ -61,7 +61,7 @@ This function is
 
 ##### `getGuess(var1)`
 
-###### `isLetter(var1)`
++ ###### `isLetter(var1)`
 
 ##### `updateGuess`
 
