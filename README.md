@@ -25,7 +25,6 @@ The rest of this README will overview the interpretation of the game.
 └── index.html
 ```
 
-#### JavaScript - `doglist.js`
 
 Creates variable 'dogList' which is assigned a string in the format of a JSON list. This list is contains 2 elements `breed` and `image` for every dog added. The intent of having an external list, is updating the word set for the game independently from the rest of the JavaScript code.
 
@@ -38,10 +37,10 @@ Currently only dogs that begin with A, B, and G breeds are in the list :(
 
 The game was converted to a object format, which basically had me re-write most of the functionality to be able to reference different objects in the variable.
 
-Essentially the game is run by calling the object function `game.playGame()`. 
+Essentially the game is run by calling the object function `game.playGame()`.
 
 ##### `playGame()`
-> This function is essentially the "looping" entity that keeps the game running. After the initial variables and content is set and displayed to the HTML, the `document.onkeyup` keeps the rest of the code looped. 
+> This function is essentially the "looping" entity that keeps the game running. After the initial variables and content is set and displayed to the HTML, the `document.onkeyup` keeps the rest of the code looped.
 
 ##### `init()`
 > This function sets all the variables with initial values. However, not all the variables are set as empty strings or default blank values.
@@ -60,15 +59,15 @@ Essentially the game is run by calling the object function `game.playGame()`.
 > This function iterates through a string and adds entity character `&nbsp;` after every character. Using `Array.join()` truncated extra `" "` when displaying to HTML, which investigated to use `&nbsp;`.
 
 ##### `getWord`
-> This function reads in the external JSON word list, generates a random index based on the size of the word list, and then assigns  `wordSecret = breed` and `wordURL = image`. 
+> This function reads in the external JSON word list, generates a random index based on the size of the word list, and then assigns  `wordSecret = breed` and `wordURL = image`.
 >
 > ##### `getRandomInt(var1, var2)`
-> This function (taken from [MDN1][]) inputs the maximum which is exclusive and the minimum is inclusive. It helps with literacy on the `Math` object. 
+> This function (taken from [MDN1][]) inputs the maximum which is exclusive and the minimum is inclusive. It helps with literacy on the `Math` object.
 
 [MDN1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 ##### `checkGame`
-> This function mainly interacts with boolean variable `gameOver`. This variable is set based on the conditions of wining (the word is guessed) and losing (the number of guesses are used up). Once the the boolean condition is changed, this check calls the `playGame()` function again which restarts (not reset) the game again. 
+> This function mainly interacts with boolean variable `gameOver`. This variable is set based on the conditions of wining (the word is guessed) and losing (the number of guesses are used up). Once the the boolean condition is changed, this check calls the `playGame()` function again which restarts (not reset) the game again.
 
 
 ##### `getGuess(var1)`
