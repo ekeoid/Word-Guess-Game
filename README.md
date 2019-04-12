@@ -25,6 +25,7 @@ The rest of this README will overview the interpretation of the game.
 └── index.html
 ```
 
+#### JavaScript - `biebz.js`
 
 Creates variable 'dogList' which is assigned a string in the format of a JSON list. This list is contains 2 elements `breed` and `image` for every dog added. The intent of having an external list, is updating the word set for the game independently from the rest of the JavaScript code.
 
